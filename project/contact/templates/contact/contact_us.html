@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 50px auto 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); background-color: #fff; text-align: center;">
+
+    <h1> Contact Us </h1>
+
+    <form method="POST" style="margin-top: 20px; display: inline-block; text-align: left;">
+
+        {% csrf_token %}
+
+        <div style="text-align: left;">
+            <label for="id_name" style="font-weight: bold;">Name:</label><br>
+            {{ form.name }}
+            <br>
+
+            <label for="id_email" style="font-weight: bold;">Email:</label><br>
+            {{ form.email }}
+            <br>
+            <label for="" style="font-weight: bold;">Property ID:</label><br>
+            {{ form.property_id }}
+            <br>
+
+            <label for="id_message" style="font-weight: bold;">Message:</label><br>
+            {{ form.message }}
+            <br>
+
+        </div>
+
+        <div style="text-align: center;">
+            <input type="submit" value="Submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}

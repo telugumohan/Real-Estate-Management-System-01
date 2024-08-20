@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block style %}
+/* styles.css */
+
+/* Style the login and signup containers */
+.login-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto auto auto;
+}
+
+/* Style the h1 element */
+.login-box h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style the form */
+.login-box form {
+    margin-top: 20px;
+}
+
+/* Style form inputs */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Style the submit button */
+.login-box button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-box button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+{% endblock %}
+
+{% block content %}
+<div class="login-box">
+ <h1>Sign Up</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

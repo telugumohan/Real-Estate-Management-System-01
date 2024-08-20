@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% block content %}
+<div class="container my-3">
+    <h1 class="my-4 text-center">Search Results for "{{ search_query }}"</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for property in properties %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <!-- Display property details here -->
+                    <img src="https://source.unsplash.com/1600x900/?beautiful house" alt="img home">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ property.property_title }} #{{property.id}}</h2>
+                        <p class="card-text">{{ property.property_description }}</p>
+                        <p>Property Type: {{ property.property_type }}</p>
+                        <p>Price: ${{ property.property_price }}</p>
+                        <p>Location: {{ property.property_location }}</p>
+                        {% if property.property_features %}
+                            <p>Additional Features: {{ property.property_features }}</p>
+                        {% endif %}
+                        <p>Seller: {{ property.seller_name }}</p>
+                        <div class="btn-group"> For more details &nbsp; &nbsp;
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'contact_us' %}">Contact Us</a></button>
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col">
+                <p style="text-align: center;">No properties match your search criteria.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

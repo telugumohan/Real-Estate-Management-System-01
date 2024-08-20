@@ -1,0 +1,46 @@
+/* Style for the carousel image container */
+.carousel-image-container {
+    position: relative; /* Set the container as a positioning context for the absolute positioning of the caption */
+}
+
+/* Style for the text overlay */
+.carousel-caption {
+    position: absolute; /* Position the caption absolutely within the image container */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding around the text */
+    bottom: 0; /* Position the text at the bottom of the image container */
+    left: 0; /* Position the text at the left of the image container */
+    width: 100%; /* Full width of the container */
+}
+
+/* Style for the heading in the caption */
+.carousel-caption h2 {
+    font-size: 24px; /* Adjust the font size */
+    margin-bottom: 10px; /* Spacing below the heading */
+}
+
+/* Style for the paragraph in the caption */
+.carousel-caption p {
+    font-size: 16px; /* Adjust the font size */
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
